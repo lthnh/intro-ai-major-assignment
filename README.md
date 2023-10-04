@@ -1,1 +1,1 @@
-Introduction to AI Major Assignments
+# Introduction to AI Major Assignments
