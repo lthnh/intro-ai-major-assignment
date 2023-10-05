@@ -1,7 +1,7 @@
 from collections import deque
 # from copy import deepcopy
 
-my_deque = deque()
+stack = deque()
 n = int()
 board = list()
 
@@ -15,11 +15,11 @@ def depth_first_search(n):
     # solutions = list()
     solutions_count = 0
     for i in range(n):
-        my_deque.append((i, 0))
-    while len(my_deque) != 0:
-        # print(my_deque)
+        stack.append((i, 0))
+    while len(stack) != 0:
+        # print(stack)
         # print(board)
-        (row, column) = my_deque.pop()
+        (row, column) = stack.pop()
         board[column] = row
         next_column = column + 1
         if next_column > n-1:
@@ -31,7 +31,7 @@ def depth_first_search(n):
             continue
         for i in range(n):
             if is_safe(i, next_column):
-                my_deque.append((i, next_column))
+                stack.append((i, next_column))
     # return solutions
     return solutions_count
 
