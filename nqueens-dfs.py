@@ -25,9 +25,10 @@ def depth_first_search(n):
         if next_column > n-1:
             # solutions.append(deepcopy(board))
             solutions_count += 1
-            for column, row in enumerate(board):
-                print(row, column)
-            print()
+            # for column, row in enumerate(board):
+            #     print(row, column)
+            # print()
+            print(board)
             continue
         for i in range(n):
             if is_safe(i, next_column):
