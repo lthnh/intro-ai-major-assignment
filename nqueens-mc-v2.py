@@ -51,7 +51,8 @@ def init_srch():
             swap(clm, rd_clm)
     for clm_i in range(clm, n):
         rd_clm = randrange(clm_i, n)
-        swap_n_update(clm_i, rd_clm)
+        swap(clm_i, rd_clm)
+        update_diag(clm_i, 1)
     return n - clm + 1
 
 def fnal_srch(k, mx_stps):
