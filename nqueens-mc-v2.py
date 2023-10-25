@@ -58,7 +58,7 @@ def init_srch():
 def fnal_srch(k, mx_stps):
     for clm in range(n-k+1, n):
         if ttl_collis(clm) > 0:
-            for i in range(mx_stps):
+            for _ in range(mx_stps):
                 rd_clm = randrange(1, n)
                 swap_n_update(clm, rd_clm)
                 conds = ttl_collis(clm) > 0 or ttl_collis(rd_clm) > 0
