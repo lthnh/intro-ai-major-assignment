@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/anhle/intro-ai-major-assignment/intro-ai"
+VIRTUAL_ENV="/home/thomas/intro-ai-major-assignment/intro-ai"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
