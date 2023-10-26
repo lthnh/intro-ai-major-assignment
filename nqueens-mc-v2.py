@@ -71,6 +71,18 @@ def is_slt():
             return False
     return True
 
+def slt_independent_chck():
+    n_diag_i = [0 for _ in range(2 * n - 1)]
+    p_diag_i = [0 for _ in range(2 * n - 1)]
+    for clm in range(n):
+        n_diag_cnst = q[clm] + clm
+        p_diag_cnst = b + q[clm] - clm
+        if n_diag_i[n_diag_cnst] + p_diag_i[p_diag_cnst] != 0:
+            return False
+        n_diag_i[n_diag_cnst] += 1
+        p_diag_i[p_diag_cnst] += 1
+    return True
+
 if __name__ == '__main__':
     n = int(input('N: '))
     b = n - 1
@@ -84,6 +96,7 @@ if __name__ == '__main__':
             fnal_srch(k, mx_stps)
         else:
             print(q)
+            print(slt_independent_chck())
             exit(0)
     print(q)
     print('None')
