@@ -5,6 +5,19 @@ stack = deque()
 n = int()
 board = list()
 
+def slt_independent_chck(q):
+    b = n - 1
+    n_diag_i = [0 for _ in range(2 * n - 1)]
+    p_diag_i = [0 for _ in range(2 * n - 1)]
+    for clm in range(n):
+        n_diag_cnst = q[clm] + clm
+        p_diag_cnst = b + q[clm] - clm
+        if n_diag_i[n_diag_cnst] + p_diag_i[p_diag_cnst] != 0:
+            return False
+        n_diag_i[n_diag_cnst] += 1
+        p_diag_i[p_diag_cnst] += 1
+    return True
+
 def is_safe(row, column):
     for i in range(column):
         if row == board[i] or abs(row - board[i]) == column - i:
@@ -28,7 +41,7 @@ def depth_first_search(n):
             # for column, row in enumerate(board):
             #     print(row, column)
             # print()
-            print(board)
+            print(board, slt_independent_chck(board))
             continue
         for i in range(n):
             if is_safe(i, next_column):
