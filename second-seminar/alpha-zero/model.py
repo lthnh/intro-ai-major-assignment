@@ -48,20 +48,20 @@ class PolicyValueNetwork(nn.Module):
             nn.Conv2d(in_channels=256, out_channels=1, kernel_size=1, stride=1),
             nn.BatchNorm2d(num_features=1),
         )
-        self.value_head_hidden = nn.Linear(in_features=1, out_features=256),
-        self.value_head_to_scalar = nn.Linear(in_features=256, out_features=1),
+        self.value_head_hidden = nn.Linear(in_features=1, out_features=256)
+        self.value_head_to_scalar = nn.Linear(in_features=256, out_features=1)
 
-        def forward(self: PolicyValueNetwork, x: torch.Tensor):
-            x1 = F.relu(self.body_block_conv(x))
-            x2 = self.body_block_residual(x1)
+    def forward(self, x: torch.Tensor):
+        x1 = F.relu(self.body_block_conv(x))
+        x2 = self.body_block_residual(x1)
 
-            x3 = F.relu(self.policy_head_conv(x2))
-            p = self.policy_head_linear(x3)
+        x3 = F.relu(self.policy_head_conv(x2))
+        p = self.policy_head_linear(x3)
 
-            x4 = F.relu(self.value_head_conv(x2))
-            x5 = F.relu(self.value_head_hidden(x4))
-            v = F.tanh(self.value_head_to_scalar(x5))
+        x4 = F.relu(self.value_head_conv(x2))
+        x5 = F.relu(self.value_head_hidden(x4))
+        v = F.tanh(self.value_head_to_scalar(x5))
 
-            return p, v
+        return p, v
 
 
