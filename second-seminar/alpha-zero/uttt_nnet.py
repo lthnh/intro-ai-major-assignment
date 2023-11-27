@@ -24,7 +24,7 @@ args = SimpleNamespace(
 )
 
 
-class UTTTNeuralNetwork:
+class UTTTNeuralNetwork():
     def __init__(self, state: torch.Tensor):
         self.nnet: nn.Module = PolicyValueNetwork(args)
         self.board_size: int = 9
