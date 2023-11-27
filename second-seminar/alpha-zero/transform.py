@@ -4,9 +4,11 @@ import numpy.typing as npt
 import torch
 
 from .state import State, UltimateTTT_Move
+from .utils import SubBoardIndex
 
 def encode(state: State):
-    start_idx = tuple(product((0, 3, 6), (0, 3, 6)))
+    # start_idx = tuple(product((0, 3, 6), (0, 3, 6)))
+    start_idx = SubBoardIndex
     encoded_state = np.zeros(shape=(4, 9, 9))
     # 0: current player
     # 1: for opponent
