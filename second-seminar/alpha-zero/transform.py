@@ -3,7 +3,7 @@ import numpy as np
 import numpy.typing as npt
 import torch
 
-from .state import State, UltimateTTT_Move
+from ..state import State, UltimateTTT_Move
 from .utils import SubBoardIndex
 
 def encode(state: State):

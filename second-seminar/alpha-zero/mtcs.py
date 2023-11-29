@@ -3,7 +3,7 @@ from collections import deque
 import numpy as np
 import numpy.typing as npt
 
-from .state import State, UltimateTTT_Move
+from ..state import State, UltimateTTT_Move
 from .uttt_nnet import UTTTNeuralNetwork
 from .transform import encode
 from .utils import SubBoardIndex
