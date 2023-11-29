@@ -74,9 +74,6 @@ class UTTTNeuralNetwork():
                 optimizer.step()
 
     def predict(self, state: npt.ArrayLike):
-        """
-        board: np array with board
-        """
         # timing
         start = time.time()
 

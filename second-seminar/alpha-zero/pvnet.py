@@ -41,7 +41,7 @@ class PolicyValueNetwork(nn.Module):
 
         # the body
         self.body_block_conv = nn.Sequential(
-            nn.Conv2d(in_channels=4, out_channels=256, kernel_size=3, stride=1),
+            nn.Conv2d(in_channels=3, out_channels=256, kernel_size=3, stride=1),
             nn.BatchNorm2d(num_features=256),
         )
         self.body_block_residual = nn.Sequential()
