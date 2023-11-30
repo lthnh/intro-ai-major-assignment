@@ -6,7 +6,7 @@ import torch
 from ..state import State, UltimateTTT_Move
 from .utils import SubBoardIndex
 
-def encode(state: State):
+def encode(state: State) -> npt.NDArray:
     # start_idx = tuple(product((0, 3, 6), (0, 3, 6)))
     start_idx = SubBoardIndex
     encoded_state = np.zeros(shape=(4, 9, 9))
@@ -42,5 +42,5 @@ def encode(state: State):
         encoded_state[3][row_idx][col_idx] = 1
     return encoded_state
 
-def decode(global_state: torch.Tensor, block_state: torch.Tensor):
+def decode(pi: torch.Tensor) -> :
     pass

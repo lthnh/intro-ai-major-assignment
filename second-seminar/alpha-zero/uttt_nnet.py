@@ -73,7 +73,7 @@ class UTTTNeuralNetwork():
                 total_loss.backward()
                 optimizer.step()
 
-    def predict(self, state: npt.ArrayLike):
+    def predict(self, state: npt.NDArray):
         # timing
         start = time.time()
 
